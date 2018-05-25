@@ -176,12 +176,11 @@ bool simular_factorial(void *dato, void *extra){
 	return true;
 }
 
-size_t k = 83;
+// EL k será 83
 bool sumar_k_pares(void *dato, void *extra){
-	if(*(size_t *)dato == k) return false;
 	if(*(size_t *)dato % 2 == 0)
 		*(size_t *)extra += *(size_t *)dato;
-	return true;
+	return *(size_t *)dato < 83;
 }
 
 size_t suma_k_pares(size_t k){
@@ -218,7 +217,7 @@ void pruebas_iterador_interno(){
 	/* Pruebo que se acumula la suma de los primeros k pares */
 	extra = 0;
 	lista_iterar(lista, sumar_k_pares, &extra);
-	print_test("se acumularon los primeros k nros pares", extra == suma_k_pares(k));
+	print_test("se acumularon los primeros k nros pares", extra == suma_k_pares(83));
 
 	/* Destruyo la lista */
 	lista_destruir(lista, NULL);

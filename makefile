@@ -24,7 +24,7 @@ valgrind: all
 zip: lista.c pruebas_alumno.c
 	zip lista.zip lista.h lista.c pruebas_alumno.c
 
-free: $(EXEC) $(OBJFILES)
+free: $(OBJFILES)
 	rm -f pruebas *.o
 gdb: all clear
 	gdb -tui ./pruebas
